@@ -103,16 +103,15 @@ POST /incidentes
 #### - Body (JSON)
 
 ```json
-{
-        "tipo_problema": "Iluminação",
-        "localizacao": "Rua das FLores, 123, Bairro das Margaridas",
-        "descricao": "Poste queimado há dias",
-        "prioridade": "Média",
-        "nome_solicitante": "Ana Clara",
-        "data_registro": "16/03/2026",
-        "hora_registro": "10:30",
-        "status_resolucao": "Em Análise"
-    },
+  {
+    "tipo_problema": "Queda de árvore",
+    "localizacao": "Praça da liberdade, 210",
+    "descricao": "Árvore de grande porte caiu sobre fiação",
+    "prioridade": "Alta",
+    "nome_solicitante": "Beatriz Lima",
+    "data_registro": "23/03/2026",
+    "hora_registro": "15:30"
+  }
 ```
 
 
@@ -125,11 +124,11 @@ PUT /incidentes/:id
 #### - Body (JSON)
 
 ```json
-{
-  "descricao": "Luz do poste foi trocada",
-  "prioridade": "Baixa",
-  "status_resolucao": "Resolvido"
-}
+  {
+    "descricao": "Buraco na calçada",
+    "prioridade": "Urgente",
+    "status_resolucao": "Em análise"
+  }
 ```
 
 ### Rota para deletar um incidente
