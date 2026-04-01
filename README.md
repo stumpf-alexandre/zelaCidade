@@ -186,3 +186,59 @@ Este projeto foi desenvolvido para fins de aprendizado em back-end com Node.js, 
     "dev": "nodemon server.js"
   },
   ```
+  * Para instalar o cors digite `npm install cors`. Para instalar nossa segurança de acesso.
+  * Para instalar o sqlite versão instavel para o render entender `npm install sqlite3@5.1.6`. É uma versão equilibrada.
+  * Para remover as pastas node_modules e package-lock.json com o comando `rm -rf node_modules package-lock.json`.
+  * Intalar novamente as pastas node_modules e package-lock.json com configurações novas `npm install`.
+  * Na pasta package.json, vai estar assim:
+  ```
+  {
+    "name": "zelacidade",
+    "version": "1.0.0",
+    "description": "![](./img/1.jpg)",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "dev": "nodemon server.js"
+    },
+    ...
+  }
+
+  ```
+  Para ficar assim:
+  ```
+  {
+    "name": "zelacidade",
+    "version": "1.0.0",
+    "description": "![](./img/1.jpg)",
+    "main": "index.js",
+    "engines": {
+      "node": "18.x"
+    },
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "dev": "nodemon server.js"
+    },
+    ...
+  }
+  ```
+  O node 18 é uma versão focada em estabilidade.
+  * Criando o start no script:
+  ```
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js"
+  },
+  ```
+  Temos que acrecentar:
+  ```
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js",
+    "start": "node server.js",
+    "postinstall": "npm rebuild sqlite3"
+  },
+  ```
+  O comando start que o render procura para rodar as API.
+  O comando postinstall recompila o sqlite3 no ambiente Render.
+  * [Clique aqui para acessar o RENDER](https://render.com/)

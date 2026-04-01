@@ -1,10 +1,12 @@
-//Importações
+//Importação
 const express = require('express'); //framework que cria o servidor e as rotas
 const {criarBanco} = require('./database'); //a chave que vai abrir a conexão com o banco de dados
-
+const cors = require('cors'); //importando o pacote que gerencia as permições de acesso
 const app = express(); //inicialização: ligando o motor do servidor
+
+//Ativação
+app.use(cors()); //ativando o CORS no servidor
 app.use(express.json()); //tradutor: configura o express para entender dados no formato JSON
-const PORT = 3000;
 
 //criando a rota principal '/', rota raiz
 app.get('/', (req, res) => {
@@ -17,11 +19,6 @@ app.get('/', (req, res) => {
             </body>
         `); //envia uma resposta simples(texto, html, json)
 
-});
-
-//ligando o servidor
-app.listen(PORT, () => {
-    console.log(`Servidor rodando em http://localhost:${PORT}`);
 });
 
 //rota de listagem - para buscar todos os problemas registrados
@@ -91,4 +88,12 @@ app.delete('/incidentes/:id', async (req, res) => {
             DELETE FROM incidentes WHERE id = ?
         `, [id]);
     res.send(`O incidente de id ${id} foi removido com sucesso`);
+});
+
+//criando uma variavel inteligente para a porta
+const PORT = process.env.PORT || 3000;
+
+//ligando o servidor
+app.listen(PORT, () => {
+    console.log(`Servidor rodando em http://localhost:${PORT}`);
 });
