@@ -161,7 +161,7 @@ Isso evita o SQL Injection
 
 ## 👩‍💻 Projeto Educacional
 
-Este projeto foi desenvolvido para fins de aprendizado em back-end com Node.js, por Alexandre
+Este projeto foi desenvolvido para fins de aprendizado em back-end com Node.js, por Alexandre. Segue o link do deploy feito para esta API **[Zela Cidade](https://zelacidade-fv9m.onrender.com)**.
 
 ---
 
